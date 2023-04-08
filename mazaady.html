@@ -1,0 +1,807 @@
+<html>
+<head>
+    <!--    <link href="bootstrap.min.css" rel="stylesheet" />-->
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script><!--    <script src="bootstrap.min.js"></script>-->
+    <!--    <script src="bootstrap.bundle.min.js"></script>-->
+    <script src="jquery.min.js"></script>
+    <link rel="stylesheet" href="https://site-assets.fontawesome.com/releases/v6.4.0/css/all.css">
+    <style>
+        @font-face {
+            font-family: myFirstFont;
+            src: url(Tajawal-Regular.ttf);
+        }
+        .carousel-inner {
+            padding: 1em;
+        }
+        .card {
+            margin: 0 0.5em;
+            box-shadow: 2px 6px 8px 0 rgba(22, 22, 26, 0.18);
+            border: none;
+        }
+        .carousel-control-prev,
+        .carousel-control-next {
+            background-color: #e1e1e1;
+            width: 6vh;
+            height: 6vh;
+            border-radius: 50%;
+            top: 50%;
+            transform: translateY(-50%);
+        }
+        @media (min-width: 768px) {
+            .carousel-item {
+                margin-right: 0;
+                flex: 0 0 33.333333%;
+                display: block;
+            }
+            .carousel-inner {
+                display: flex;
+            }
+        }
+        .card .img-wrapper {
+            max-width: 100%;
+            height: 13em;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .card img {
+            max-height: 100%;
+        }
+        @media (max-width: 767px) {
+            .card .img-wrapper {
+                height: 17em;
+            }
+        }
+        .dashs::before {
+            content: "------------";
+            color: #D9D9D9;
+        }
+        .heart-fav {
+            width: 25px;
+            height: 25px;
+            padding: 0.3rem;
+            top: 3rem;
+            right: 2.5rem;
+            background: #fff;
+            box-shadow: 2px 2px 2px 2px rgba(78,75,75,.5);
+            position: absolute;
+        }
+        .t-title {
+            color: #FDBC01;
+        }
+        .table-striped>tbody>tr:nth-of-type(odd) {
+            background-color: #FFF9E6 !important;
+        }
+    </style>
+</head>
+<body style="background-color: #f6f6f6;">
+<div class="container" style="background-color: #f6f6f6;">
+    <div class="row" dir="rtl">
+        <div class="col">
+            <div class="card">
+                <div class="card-body">
+                    <div class="d-flex align-items-center">
+                        <img src="avatar.png" class="rounded-circle mr-3" style="width: 50px;position: relative;" alt="Avatar">
+                        <a href="#" style="z-index: 2!important;" class="heart-fav rounded-circle" tabindex="0">
+                            <i class="fa fa-heart text-secondary"></i>
+                        </a>
+                        <div>
+                            <span class="fw-bold me-4">إسم البائع</span>
+                            <div>
+                                <p class="fw-lighter mb-0 me-4 ">+9203556783</p>
+                            </div>
+                        </div>
+                        <div class="stars text-center text-warning p-3">
+                            <span class="fa fa-star"></span>
+                            <span class="fa fa-star"></span>
+                            <span class="fa fa-star"></span>
+                            <span class="fa fa-star"></span>
+                            <span class="fa fa-star link-secondary"></span>
+                        </div>
+                    </div>
+                    <div class="fw-bold" style="color: #414141;">شراء مجموعة من السيارات من موديلات 1990</div>
+                    <div>
+                        <p class="fw-lighter" style="color: #808080;">code1234</p>
+                    </div>
+                    <div class="row">
+                        <div class="col-8">
+                            <button class="btn badge" style="color: #D20653; background-color: #fbe7ee;">
+                                +10000
+                            </button>
+                            <button class="btn badge" style="color: #D20653; background-color: #fbe7ee;">
+                                +10010
+                            </button>
+                            <button class="btn badge" style="color: #D20653; background-color: #fbe7ee;">
+                                +10020
+                            </button>
+                        </div>
+                        <div class="col-4">
+                            <div class="input-group mb-3">
+                                <input type="text" class="form-control" placeholder="إكتب المبلغ">
+                                <button class="btn text-white" style="background: linear-gradient(to right,#9B0257,#D20653);width: 75px; text-align: center;padding-top: 7px;border-top-right-radius: 0;border-bottom-right-radius: 0;">تأكيد</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row" style="margin-top: 30px;" dir="rtl">
+        <div class="col">
+            <div class="card">
+                <div class="card-body">
+                    <div>
+                        <h3 class="fw-bolder">أرسل رسالة إلى البائع</h3>
+                    </div>
+                    <div>
+                        <span class="fw-lighter" style="color: #808080;">يمكنك في الوقت البث المباشر إرسال إلى البائع للإستفسار</span>
+                    </div>
+                    <div class="input-group mt-3 mb-3">
+                        <input type="text" class="form-control" placeholder="اكتب سؤالك" style="background-color: #F3F3F3;border-radius: 2.25rem;">
+                        <button class="btn rounded-circle" type="button" style="background: linear-gradient(to bottom,#D20653,#9B0257);">
+                            <i class="fas fa fa-solid fa-paper-plane-top fa-rotate-180 fa-lg text-white"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row" style="margin-top: 30px;" dir="rtl">
+        <div class="col">
+            <div class="card">
+                <div class="card-body">
+                    <div>
+                        <h3 class="fw-bolder">تفاصيل المزاد</h3>
+                    </div>
+                    <div class="row">
+                        <div class="col-6">
+                            <i class="fa-regular fa-location-dot"></i>
+                            <span>Egypt, Mansoura</span>
+                        </div>
+                        <div class="col-6" >
+                            <p class="text-sm-start">200 قطعة</p>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-6" style="color: #808080;">
+                            <i class="fa-light fa-circle-dollar fa-sm"></i>
+                            <span>البيع لأعلى سعر</span>
+                        </div>
+                        <div class="col-6 text-sm-start" style="color:#FF951D;">
+                            <i class="fa-solid fa-microphone"></i>
+                            <span>صوت</span>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-6">
+                            <i class="fa-regular fa-table-cells-large fa-sm"></i>
+                            <span>منتجات متعددة</span>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-12">
+                            <hr />
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-12">
+                            <h3 class="fw-bolder">وصف</h3>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-12">
+                            <p class="fw-light" style="color: #808080;">هذا النص هو مثال لنص يمكن أن يستبدل في نفس المساحة، لقد تم توليد هذا النص من مولد النص العربى، حيث يمكنك أن تولد مثل هذا النص أو العديد من النصوص الأخرى إضافة إلى زيادة عدد الحروف التى يولدها التطبيق. إذا كنت تحتاج إلى عدد أكبر من الفقرات يتيح لك مولد النص العربى زيادة عدد الفقرات كما تريد، النص لن يبدو مقسما ولا يحوي أخطاء لغوية، مولد النص العربى مفيد لمصممي المواقع على وجه الخصوص، حيث يحتاج العميل فى كثير من الأحيان أن يطلع على صورة حقيقية لتصميم الموقع. ومن هنا وجب على المصمم أن يضع نصوصا مؤقتة على التصميم ليظهر للعميل الشكل كاملاً،دور مولد النص العربى أن يوفر على المصمم عناء البحث عن نص بديل لا علاقة له بالموضوع الذى يتحدث عنه التصميم فيظهر بشكل لا يليق.</p>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-12">
+                            <hr />
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-12">
+                            <h3 class="fw-bolder">سياسة الاسترجاع والاستبدال</h3>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-12">
+                            <p class="fw-light" style="color: #808080;">
+                                هذا النص هو مثال لنص يمكن أن يستبدل في نفس المساحة، لقد تم توليد هذا النص من مولد النص العربى، حيث يمكنك أن تولد مثل هذا النص أو العديد من النصوص الأخرى إضافة إلى زيادة عدد الحروف التى يولدها التطبيق. إذا كنت تحتاج إلى عدد أكبر من الفقرات يتيح لك مولد النص العربى زيادة عدد الفقرات كما تريد، النص لن يبدو مقسما ولا يحوي أخطاء لغوية، مولد النص العربى مفيد لمصممي المواقع على وجه الخصوص، حيث يحتاج العميل فى كثير من الأحيان أن يطلع على صورة حقيقية لتصميم الموقع. ومن هنا وجب على المصمم أن يضع نصوصا مؤقتة على التصميم ليظهر للعميل الشكل كاملاً،دور مولد النص العربى أن يوفر على المصمم عناء البحث عن نص بديل لا علاقة له بالموضوع الذى يتحدث عنه التصميم فيظهر بشكل لا يليق.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row" style="margin-top: 30px;" dir="rtl">
+        <div class="col">
+            <div class="card">
+                <div class="card-body">
+                    <div class="col-12">
+                        <h3 class="fw-bolder">تفاصيل المنتج</h3>
+                    </div>
+                    <div class="col-12">
+                        <table class="table table-striped">
+                            <tbody>
+                            <tr>
+                                <td class="t-title">العداد</td>
+                                <td class="fw-bold" class="fw-bold">15126</td>
+                            </tr>
+                            <tr>
+                                <td class="t-title">رقم الهيكل</td>
+                                <td class="fw-bold">458896</td>
+                            </tr>
+                            <tr>
+                                <td class="t-title">المنشأ</td>
+                                <td class="fw-bold">الصين</td>
+                            </tr>
+                            <tr>
+                                <td class="t-title">الحالة</td>
+                                <td class="fw-bold">للايجار</td>
+                            </tr>
+                            <tr>
+                                <td class="t-title">الماركة</td>
+                                <td class="fw-bold">تسلا</td>
+                            </tr>
+                            <tr>
+                                <td class="t-title">الموديل</td>
+                                <td class="fw-bold">تسلابرو</td>
+                            </tr>
+                            <tr>
+                                <td class="t-title">سنة الصنع</td>
+                                <td class="fw-bold">2021</td>
+                            </tr>
+                            <tr>
+                                <td class="t-title">الوصف</td>
+                                <td class="fw-bold"></td>
+                            </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="col-12">
+                        هذا النص هو مثال لنص يمكن أن يستبدل في نفس المساحة، لقد تم توليد هذا النص من مولد النص العربى، حيث يمكنك أن تولد مثل هذا النص أو العديد من النصوص الأخرى إضافة إلى زيادة عدد الحروف التى يولدها التطبيق. إذا كنت تحتاج إلى عدد أكبر من الفقرات يتيح لك مولد النص العربى هذا النص هو مثال لنص يمكن أن يستبدل في نفس المساحة، لقد تم توليد هذا النص من مولد النص العربى، حيث يمكنك أن تولد مثل هذا النص أو العديد من النصوص الأخرى إضافة إلى زيادة عدد الحروف التى يولدها التطبيق. إذا كنت تحتاج إلى عدد أكبر من الفقرات يتيح لك مولد النص العربى
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row" style="margin-top: 30px;">
+        <div class="col">
+            <div class="card">
+                <div class="card-body">
+                    <div dir="rtl">
+                        <h3 class="fw-bolder">الشحن و المتابعة</h3>
+                    </div>
+                </div>
+                <div id="carouselExampleControls" class="carousel" data-bs-ride="carousel">
+                    <div class="carousel-inner">
+                        <div class="carousel-item active">
+                            <div class="card" style="width: 18rem;">
+                                <div class="card-body">
+                                    <div dir="rtl">
+                                        <table class="table">
+                                            <tr>
+                                                <td>الكمية</td>
+                                                <td><span class="dashs"><h2 /></span></td>
+                                                <td style="color: #F45B14;">100</td>
+                                            </tr>
+                                            <tr>
+                                                <td>الوزن</td>
+                                                <td><span class="dashs"><h2 /></span></td>
+                                                <td style="color: #F45B14;">20 كغ</td>
+                                            </tr>
+                                            <tr>
+                                                <td>الطول</td>
+                                                <td><span class="dashs"><h2 /></span></td>
+                                                <td style="color: #F45B14;">100 سم</td>
+                                            </tr>
+                                            <tr>
+                                                <td>الارتفاع</td>
+                                                <td><span class="dashs"><h2 /></span></td>
+                                                <td style="color: #F45B14;">100 سم</td>
+                                            </tr>
+                                            <tr>
+                                                <td>العرض</td>
+                                                <td><span class="dashs"><h2 /></span></td>
+                                                <td style="color: #F45B14;">100 سم</td>
+                                            </tr>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="carousel-item">
+                            <div class="card" style="width: 18rem;">
+                                <div class="card-body">
+                                    <div dir="rtl">
+                                        <table class="table">
+                                            <tr>
+                                                <td>الكمية</td>
+                                                <td><span class="dashs"><h2 /></span></td>
+                                                <td style="color: #F45B14;">100</td>
+                                            </tr>
+                                            <tr>
+                                                <td>الوزن</td>
+                                                <td><span class="dashs"><h2 /></span></td>
+                                                <td style="color: #F45B14;">20 كغ</td>
+                                            </tr>
+                                            <tr>
+                                                <td>الطول</td>
+                                                <td><span class="dashs"><h2 /></span></td>
+                                                <td style="color: #F45B14;">100 سم</td>
+                                            </tr>
+                                            <tr>
+                                                <td>الارتفاع</td>
+                                                <td><span class="dashs"><h2 /></span></td>
+                                                <td style="color: #F45B14;">100 سم</td>
+                                            </tr>
+                                            <tr>
+                                                <td>العرض</td>
+                                                <td><span class="dashs"><h2 /></span></td>
+                                                <td style="color: #F45B14;">100 سم</td>
+                                            </tr>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="carousel-item">
+                            <div class="card" style="width: 18rem;">
+                                <div class="card-body">
+                                    <div dir="rtl">
+                                        <table class="table">
+                                            <tr>
+                                                <td>الكمية</td>
+                                                <td><span class="dashs"><h2 /></span></td>
+                                                <td style="color: #F45B14;">100</td>
+                                            </tr>
+                                            <tr>
+                                                <td>الوزن</td>
+                                                <td><span class="dashs"><h2 /></span></td>
+                                                <td style="color: #F45B14;">20 كغ</td>
+                                            </tr>
+                                            <tr>
+                                                <td>الطول</td>
+                                                <td><span class="dashs"><h2 /></span></td>
+                                                <td style="color: #F45B14;">100 سم</td>
+                                            </tr>
+                                            <tr>
+                                                <td>الارتفاع</td>
+                                                <td><span class="dashs"><h2 /></span></td>
+                                                <td style="color: #F45B14;">100 سم</td>
+                                            </tr>
+                                            <tr>
+                                                <td>العرض</td>
+                                                <td><span class="dashs"><h2 /></span></td>
+                                                <td style="color: #F45B14;">100 سم</td>
+                                            </tr>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="carousel-item">
+                            <div class="card" style="width: 18rem;">
+                                <div class="card-body">
+                                    <div dir="rtl">
+                                        <table class="table">
+                                            <tr>
+                                                <td>الكمية</td>
+                                                <td><span class="dashs"><h2 /></span></td>
+                                                <td style="color: #F45B14;">100</td>
+                                            </tr>
+                                            <tr>
+                                                <td>الوزن</td>
+                                                <td><span class="dashs"><h2 /></span></td>
+                                                <td style="color: #F45B14;">20 كغ</td>
+                                            </tr>
+                                            <tr>
+                                                <td>الطول</td>
+                                                <td><span class="dashs"><h2 /></span></td>
+                                                <td style="color: #F45B14;">100 سم</td>
+                                            </tr>
+                                            <tr>
+                                                <td>الارتفاع</td>
+                                                <td><span class="dashs"><h2 /></span></td>
+                                                <td style="color: #F45B14;">100 سم</td>
+                                            </tr>
+                                            <tr>
+                                                <td>العرض</td>
+                                                <td><span class="dashs"><h2 /></span></td>
+                                                <td style="color: #F45B14;">100 سم</td>
+                                            </tr>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="carousel-item">
+                            <div class="card" style="width: 18rem;">
+                                <div class="card-body">
+                                    <div dir="rtl">
+                                        <table class="table">
+                                            <tr>
+                                                <td>الكمية</td>
+                                                <td><span class="dashs"><h2 /></span></td>
+                                                <td style="color: #F45B14;">100</td>
+                                            </tr>
+                                            <tr>
+                                                <td>الوزن</td>
+                                                <td><span class="dashs"><h2 /></span></td>
+                                                <td style="color: #F45B14;">20 كغ</td>
+                                            </tr>
+                                            <tr>
+                                                <td>الطول</td>
+                                                <td><span class="dashs"><h2 /></span></td>
+                                                <td style="color: #F45B14;">100 سم</td>
+                                            </tr>
+                                            <tr>
+                                                <td>الارتفاع</td>
+                                                <td><span class="dashs"><h2 /></span></td>
+                                                <td style="color: #F45B14;">100 سم</td>
+                                            </tr>
+                                            <tr>
+                                                <td>العرض</td>
+                                                <td><span class="dashs"><h2 /></span></td>
+                                                <td style="color: #F45B14;">100 سم</td>
+                                            </tr>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="carousel-item">
+                            <div class="card" style="width: 18rem;">
+                                <div class="card-body">
+                                    <div dir="rtl">
+                                        <table class="table">
+                                            <tr>
+                                                <td>الكمية</td>
+                                                <td><span class="dashs"><h2 /></span></td>
+                                                <td style="color: #F45B14;">100</td>
+                                            </tr>
+                                            <tr>
+                                                <td>الوزن</td>
+                                                <td><span class="dashs"><h2 /></span></td>
+                                                <td style="color: #F45B14;">20 كغ</td>
+                                            </tr>
+                                            <tr>
+                                                <td>الطول</td>
+                                                <td><span class="dashs"><h2 /></span></td>
+                                                <td style="color: #F45B14;">100 سم</td>
+                                            </tr>
+                                            <tr>
+                                                <td>الارتفاع</td>
+                                                <td><span class="dashs"><h2 /></span></td>
+                                                <td style="color: #F45B14;">100 سم</td>
+                                            </tr>
+                                            <tr>
+                                                <td>العرض</td>
+                                                <td><span class="dashs"><h2 /></span></td>
+                                                <td style="color: #F45B14;">100 سم</td>
+                                            </tr>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="carousel-item">
+                            <div class="card" style="width: 18rem;">
+                                <div class="card-body">
+                                    <div dir="rtl">
+                                        <table class="table">
+                                            <tr>
+                                                <td>الكمية</td>
+                                                <td><span class="dashs"><h2 /></span></td>
+                                                <td style="color: #F45B14;">100</td>
+                                            </tr>
+                                            <tr>
+                                                <td>الوزن</td>
+                                                <td><span class="dashs"><h2 /></span></td>
+                                                <td style="color: #F45B14;">20 كغ</td>
+                                            </tr>
+                                            <tr>
+                                                <td>الطول</td>
+                                                <td><span class="dashs"><h2 /></span></td>
+                                                <td style="color: #F45B14;">100 سم</td>
+                                            </tr>
+                                            <tr>
+                                                <td>الارتفاع</td>
+                                                <td><span class="dashs"><h2 /></span></td>
+                                                <td style="color: #F45B14;">100 سم</td>
+                                            </tr>
+                                            <tr>
+                                                <td>العرض</td>
+                                                <td><span class="dashs"><h2 /></span></td>
+                                                <td style="color: #F45B14;">100 سم</td>
+                                            </tr>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="carousel-item">
+                            <div class="card" style="width: 18rem;">
+                                <div class="card-body">
+                                    <div dir="rtl">
+                                        <table class="table">
+                                            <tr>
+                                                <td>الكمية</td>
+                                                <td><span class="dashs"><h2 /></span></td>
+                                                <td style="color: #F45B14;">100</td>
+                                            </tr>
+                                            <tr>
+                                                <td>الوزن</td>
+                                                <td><span class="dashs"><h2 /></span></td>
+                                                <td style="color: #F45B14;">20 كغ</td>
+                                            </tr>
+                                            <tr>
+                                                <td>الطول</td>
+                                                <td><span class="dashs"><h2 /></span></td>
+                                                <td style="color: #F45B14;">100 سم</td>
+                                            </tr>
+                                            <tr>
+                                                <td>الارتفاع</td>
+                                                <td><span class="dashs"><h2 /></span></td>
+                                                <td style="color: #F45B14;">100 سم</td>
+                                            </tr>
+                                            <tr>
+                                                <td>العرض</td>
+                                                <td><span class="dashs"><h2 /></span></td>
+                                                <td style="color: #F45B14;">100 سم</td>
+                                            </tr>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="carousel-item">
+                            <div class="card" style="width: 18rem;">
+                                <div class="card-body">
+                                    <div dir="rtl">
+                                        <table class="table">
+                                            <tr>
+                                                <td>الكمية</td>
+                                                <td><span class="dashs"><h2 /></span></td>
+                                                <td style="color: #F45B14;">100</td>
+                                            </tr>
+                                            <tr>
+                                                <td>الوزن</td>
+                                                <td><span class="dashs"><h2 /></span></td>
+                                                <td style="color: #F45B14;">20 كغ</td>
+                                            </tr>
+                                            <tr>
+                                                <td>الطول</td>
+                                                <td><span class="dashs"><h2 /></span></td>
+                                                <td style="color: #F45B14;">100 سم</td>
+                                            </tr>
+                                            <tr>
+                                                <td>الارتفاع</td>
+                                                <td><span class="dashs"><h2 /></span></td>
+                                                <td style="color: #F45B14;">100 سم</td>
+                                            </tr>
+                                            <tr>
+                                                <td>العرض</td>
+                                                <td><span class="dashs"><h2 /></span></td>
+                                                <td style="color: #F45B14;">100 سم</td>
+                                            </tr>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <button class="carousel-control-prev rounded-circle" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
+                        <span class="fa-solid fa-chevron-left text-black bg-white" aria-hidden="true"></span>
+                        <span class="visually-hidden">السابق</span>
+                    </button>
+                    <button class="carousel-control-next rounded-circle" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
+                        <span class="fa-solid fa-chevron-right text-black bg-white" aria-hidden="true"></span>
+                        <span class="visually-hidden">التالي</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row" style="margin-top: 30px;" dir="rtl">
+        <div class="col">
+            <div class="card">
+                <div class="card-body">
+                    <div class="row">
+                        <div class="col-6">
+                            <h3 class="fw-bolder">التقييمات</h3>
+                        </div>
+                        <div class="col-5 text-sm-start" style="color: #D20653;">
+                            + أضف تقيم
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-1">
+                            <img src="i1.png" class="rounded-circle mr-3" style="width: 50px;position: relative;" alt="Avatar">
+                        </div>
+                        <div class="col-9">
+                            <span class="fw-lighter me-4">Ahmed Reda</span>
+                            <div>
+                                <p class="mb-0 me-4 ">السيارة مطابقة للمواصفات و السعر الفوري خاص بها مناسب جدا بلا بخس</p>
+                            </div>
+                        </div>
+                        <div class="col-1 text-center">
+                          <span style="font-size: 25px;position:absolute;text-align:center;width:26px;padding-top:4px;padding-right: 15px;">5</span>
+                                <i class="fa-solid fa-star" style=" font-size: 40px;
+                                  background: -moz-linear-gradient(farthest-corner at 9% 128%, #ffc200 35%, #ffbc06 51%, #ffae18 72%, #ff9736 98%, #ff953a 100%);
+                                  background: -webkit-linear-gradient(farthest-corner at 9% 128%, #ffc200 35%, #ffbc06 51%, #ffae18 72%, #ff9736 98%, #ff953a 100%);
+                                  background: radial-gradient(farthest-corner at 9% 128%, #ffc200 35%, #ffbc06 51%, #ffae18 72%, #ff9736 98%, #ff953a 100%);
+                                  -webkit-background-clip: text;
+                                  -moz-background-clip: text;
+                                  background-clip: text;
+                                  -webkit-text-fill-color: transparent;"></i>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-8 fw-bold" style="color: #FF3939;margin-right: 10.3333%" >
+                            <i class="fa-light fa-flag"></i>
+                            <span>
+                            ابلاغ
+                            </span>
+                        </div>
+                        <div class="col-2 text-sm-start" style="color: #808080;">
+                            03:00, 11-2-2022
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-12">
+                            <hr />
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-1">
+                            <img src="avatar.png" class="rounded-circle mr-3" style="width: 50px;position: relative;" alt="Avatar">
+                        </div>
+                        <div class="col-9">
+                            <span class="fw-lighter me-4">Ahmed Reda</span>
+                            <div>
+                                <p class="mb-0 me-4 ">السيارة مطابقة للمواصفات و السعر الفوري خاص بها مناسب جدا بلا بخس</p>
+                            </div>
+                        </div>
+                        <div class="col-1 text-center">
+                          <span style="font-size: 25px;position:absolute;text-align:center;width:26px;padding-top:4px;padding-right: 15px;">5</span>
+                                <i class="fa-solid fa-star" style=" font-size: 40px;
+                                  background: -moz-linear-gradient(farthest-corner at 9% 128%, #ffc200 35%, #ffbc06 51%, #ffae18 72%, #ff9736 98%, #ff953a 100%);
+                                  background: -webkit-linear-gradient(farthest-corner at 9% 128%, #ffc200 35%, #ffbc06 51%, #ffae18 72%, #ff9736 98%, #ff953a 100%);
+                                  background: radial-gradient(farthest-corner at 9% 128%, #ffc200 35%, #ffbc06 51%, #ffae18 72%, #ff9736 98%, #ff953a 100%);
+                                  -webkit-background-clip: text;
+                                  -moz-background-clip: text;
+                                  background-clip: text;
+                                  -webkit-text-fill-color: transparent;"></i>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-8 fw-bold" style="color: #FF3939;margin-right: 10.3333%" >
+                            <i class="fa-light fa-flag"></i>
+                            <span>
+                            ابلاغ
+                            </span>
+                        </div>
+                        <div class="col-2 text-sm-start" style="color: #808080;">
+                            03:00, 11-2-2022
+                        </div>
+                    </div>
+                     <div class="row">
+                        <div class="col-12">
+                            <hr />
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-1">
+                            <img src="i2.png" class="rounded-circle mr-3" style="width: 50px;position: relative;" alt="Avatar">
+                        </div>
+                        <div class="col-9">
+                            <span class="fw-lighter me-4">Ahmed Reda</span>
+                            <div>
+                                <p class="mb-0 me-4 ">السيارة مطابقة للمواصفات و السعر الفوري خاص بها مناسب جدا بلا بخس</p>
+                            </div>
+                        </div>
+                        <div class="col-1 text-center">
+                          <span style="font-size: 25px;position:absolute;text-align:center;width:26px;padding-top:4px;padding-right: 15px;">5</span>
+                                <i class="fa-solid fa-star" style=" font-size: 40px;
+                                  background: -moz-linear-gradient(farthest-corner at 9% 128%, #ffc200 35%, #ffbc06 51%, #ffae18 72%, #ff9736 98%, #ff953a 100%);
+                                  background: -webkit-linear-gradient(farthest-corner at 9% 128%, #ffc200 35%, #ffbc06 51%, #ffae18 72%, #ff9736 98%, #ff953a 100%);
+                                  background: radial-gradient(farthest-corner at 9% 128%, #ffc200 35%, #ffbc06 51%, #ffae18 72%, #ff9736 98%, #ff953a 100%);
+                                  -webkit-background-clip: text;
+                                  -moz-background-clip: text;
+                                  background-clip: text;
+                                  -webkit-text-fill-color: transparent;"></i>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-8 fw-bold" style="color: #FF3939;margin-right: 10.3333%" >
+                            <i class="fa-light fa-flag"></i>
+                            <span>
+                            ابلاغ
+                            </span>
+                        </div>
+                        <div class="col-2 text-sm-start" style="color: #808080;">
+                            03:00, 11-2-2022
+                        </div>
+                    </div>
+                     <div class="row">
+                        <div class="col-12">
+                            <hr />
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-1">
+                            <img src="i1.png" class="rounded-circle mr-3" style="width: 50px;position: relative;" alt="Avatar">
+                        </div>
+                        <div class="col-9">
+                            <span class="fw-lighter me-4">Ahmed Reda</span>
+                            <div>
+                                <p class="mb-0 me-4 ">السيارة مطابقة للمواصفات و السعر الفوري خاص بها مناسب جدا بلا بخس</p>
+                            </div>
+                        </div>
+                        <div class="col-1 text-center">
+                          <span style="font-size: 25px;position:absolute;text-align:center;width:26px;padding-top:4px;padding-right: 15px;">5</span>
+                                <i class="fa-solid fa-star" style=" font-size: 40px;
+                                  background: -moz-linear-gradient(farthest-corner at 9% 128%, #ffc200 35%, #ffbc06 51%, #ffae18 72%, #ff9736 98%, #ff953a 100%);
+                                  background: -webkit-linear-gradient(farthest-corner at 9% 128%, #ffc200 35%, #ffbc06 51%, #ffae18 72%, #ff9736 98%, #ff953a 100%);
+                                  background: radial-gradient(farthest-corner at 9% 128%, #ffc200 35%, #ffbc06 51%, #ffae18 72%, #ff9736 98%, #ff953a 100%);
+                                  -webkit-background-clip: text;
+                                  -moz-background-clip: text;
+                                  background-clip: text;
+                                  -webkit-text-fill-color: transparent;"></i>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-8 fw-bold" style="color: #FF3939;margin-right: 10.3333%" >
+                            <i class="fa-light fa-flag"></i>
+                            <span>
+                            ابلاغ
+                            </span>
+                        </div>
+                        <div class="col-2 text-sm-start" style="color: #808080;">
+                            03:00, 11-2-2022
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script>
+    var multipleCardCarousel = document.querySelector(
+        "#carouselExampleControls"
+    );
+    if (window.matchMedia("(min-width: 768px)").matches) {
+        var carousel = new bootstrap.Carousel(multipleCardCarousel, {
+            interval: false,
+        });
+        var carouselWidth = $(".carousel-inner")[0].scrollWidth;
+        var cardWidth = $(".carousel-item").width();
+        var scrollPosition = 0;
+        $("#carouselExampleControls .carousel-control-next").on("click", function () {
+            if (scrollPosition < carouselWidth - cardWidth * 4) {
+                scrollPosition += cardWidth;
+                $("#carouselExampleControls .carousel-inner").animate(
+                    { scrollLeft: scrollPosition },
+                    600
+                );
+            }
+        });
+        $("#carouselExampleControls .carousel-control-prev").on("click", function () {
+            if (scrollPosition > 0) {
+                scrollPosition -= cardWidth;
+                $("#carouselExampleControls .carousel-inner").animate(
+                    { scrollLeft: scrollPosition },
+                    600
+                );
+            }
+        });
+    } else {
+        $(multipleCardCarousel).addClass("slide");
+    }
+</script>
+</body>
+</html>
